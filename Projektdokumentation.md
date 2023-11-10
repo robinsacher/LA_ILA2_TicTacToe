@@ -22,7 +22,7 @@
 | 2    | Muss            |Funktional      | Als ein User möchte ich X oder O in ein Feld machen können, um ein Spielzug zu spielen. |
 | 3  | Muss           |Funktional      | Als ein User möchte ich eine Anzeige sehen, damit ich weiss welcher Spieler an der Reihe ist. |
 | 4  | Muss            |Funktional      | Als ein User möchte ich, dass ich gegen den Computer spielen kann, damit ich das Spiel spielen kann. |
-| 5  | Kann            |Kann      | Als ein User möchte ich, dass ein zweispielermodus spielen kann ohne Computer, damit ich mit Freunden spielen kann. |
+| 5  | Kann            |Kann      | Als ein User möchte ich, dass ein Zweispielermodus spielen kann ohne Computer, damit ich mit Freunden spielen kann. |
 | 6  | Muss           |Qualität      | Als ein User möchte ich eine Punkteanzeige haben, damit ich weiss wer am Gewinnen ist. |
 | 7  |  Muss      |Qualität      | Als ein User möchte ich die Möglichkeit haben eine Runde neu zu starten, damit ich nochmals spielen kann.      |
 | 8  | Muss  |Qualität    | Als ein User möchte ich, dass die Benutzeroberfläche verständlich gestaltet ist, damit man sich besser Zurecht findet.   |
@@ -32,8 +32,16 @@
 
 | TC-№ | Ausgangslage | Eingabe | Erwartete Ausgabe |
 | ---- | ------------ | ------- | ----------------- |
-| 1.1  |              |         |                   |
-| ...  |              |         |                   |
+| 1.1  | Webseite gestartet    | Spiel starten klicken    |  Spiel mit Spielfeld wird geöffnet    |
+| 2.1  |  Spiel gestartet  | x oder o ausgewählt | x oder o wird in einem Feld platziert   |
+| 3.1  | Spiel gestartet |    |   Spieler x oder o ist dran |
+| 4.1  | Webseite gestartet | Gegen Computer spielen anklicken | Spiel gegen Computer wird gestartet |
+| 5.1  | Webseite gestartet | Gegen anderen Spieler spielen anklicken | Spiel gegen anderen Spieler wird gestartet |
+| 6.1  | Spiel gestartet |           | Punktestand wird angezeigt |
+| 7.1  | Runde beenden angeklickt | neue Runde starten anklicken | neue Runde startet |
+| 8.1  | Webseite gestarte |            | Benutzerfreundliche Webseite wird angezeigt |
+| 9.1  | Webseite wird auf verschiedenen Browsern gestartet |        |funktionierendes Spiel  |
+
 
 ✍️ Die Nummer hat das Format `N.m`, wobei `N` die Nummer der User Story ist, die der Testfall abdeckt, und `m` von `1` an nach oben gezählt. Beispiel: Der dritte Testfall, der die zweite User Story abdeckt, hat also die Nummer `2.3`.
 

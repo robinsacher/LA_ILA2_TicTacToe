@@ -5,13 +5,7 @@
 -  Damian Müller
 -  Robin Sacher
 -  Julian Hitz
-
-| Datum | Version | Zusammenfassung                                              |
-| ----- | ------- | ------------------------------------------------------------ |
-|       | 0.0.1   | ✍️ Jedes Mal, wenn Sie an dem Projekt arbeiten, fügen Sie hier eine neue Zeile ein und beschreiben in *einem* Satz, was Sie erreicht haben. |
-|       | ...     |                                                              |
-|       | 1.0.0   |                                                              |
-
+                                                         
 ## 1 Informieren
 
 ### 1.1 Ihr Projekt

@@ -18,10 +18,15 @@
 
 | US-№ | Verbindlichkeit | Typ  | Beschreibung                       |
 | ---- | --------------- | ---- | ---------------------------------- |
-| 1    |                 |      | Als ein 🤷‍♂️ möchte ich 🤷‍♂️, damit 🤷‍♂️ |
-| ...  |                 |      |                                    |
-
-✍️ Jede User Story hat eine ganzzahlige Nummer (1, 2, 3 etc.), eine Verbindlichkeit (Muss oder Kann?), und einen Typ (Funktional, Qualität, Rand). Die User Story selber hat folgende Form: *Als ein 🤷‍♂️ möchte ich 🤷‍♂️, damit 🤷‍♂️*.
+| 1    | Muss            |Funktional | Als ein User möchte ich das Spielfeld sehen können, damit ich meine Spielzüge planen kann. |
+| 2    | Muss            |Funktional      | Als ein User möchte ich X oder O in ein Feld machen können, um ein Spielzug zu spielen. |
+| 3  | Muss           |Funktional      | Als ein User möchte ich eine Anzeige sehen, damit ich weiss welcher Spieler an der Reihe ist. |
+| 4  | Muss            |Funktional      | Als ein User möchte ich, dass ich gegen den Computer spielen kann, damit ich das Spiel spielen kann. |
+| 5  | Kann            |Kann      | Als ein User möchte ich, dass ein zweispielermodus spielen kann ohne Computer, damit ich mit Freunden spielen kann. |
+| 6  | Muss           |Qualität      | Als ein User möchte ich eine Punkteanzeige haben, damit ich weiss wer am Gewinnen ist. |
+| 7  |  Muss      |Qualität      | Als ein User möchte ich die Möglichkeit haben eine Runde neu zu starten, damit ich nochmals spielen kann.      |
+| 8  | Muss  |Qualität    | Als ein User möchte ich, dass die Benutzeroberfläche verständlich gestaltet ist, damit man sich besser Zurecht findet.   |
+| 9  | Muss   | Qualität  | Als ein User möchte ich, dass das Spiel mit verschiedenen Webbrowsern kompatibel ist, damit ich es auf verschiedenen Webbrowsern spielen kann.|
 
 ### 1.3 Testfälle
 

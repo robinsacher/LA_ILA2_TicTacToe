@@ -1,11 +1,13 @@
 # LA_ILA2_TicTacToe
+
 # Projekt-Dokumentation
 
 ### Gruppe:
--  Damian Müller
--  Robin Sacher
--  Julian Hitz
-                                                         
+
+- Damian Müller
+- Robin Sacher
+- Julian Hitz
+
 ## 1 Informieren
 
 ### 1.1 Ihr Projekt
@@ -16,38 +18,35 @@
 
 ### 1.2 User Stories
 
-| US-№ | Verbindlichkeit | Typ  | Beschreibung                       |
-| ---- | --------------- | ---- | ---------------------------------- |
-| 1    | Muss            |Funktional | Als ein User möchte ich das Spielfeld sehen können, damit ich meine Spielzüge planen kann. |
-| 2    | Muss            |Funktional      | Als ein User möchte ich X oder O in ein Feld machen können, um ein Spielzug zu spielen. |
-| 3  | Muss           |Funktional      | Als ein User möchte ich eine Anzeige sehen, damit ich weiss welcher Spieler an der Reihe ist. |
-| 4  | Muss            |Funktional      | Als ein User möchte ich, dass ich gegen den Computer spielen kann, damit ich das Spiel spielen kann. |
-| 5  | Kann            |Kann      | Als ein User möchte ich, dass ein Zweispielermodus spielen kann ohne Computer, damit ich mit Freunden spielen kann. |
-| 6  | Muss           |Qualität      | Als ein User möchte ich eine Punkteanzeige haben, damit ich weiss wer am Gewinnen ist. |
-| 7  |  Muss      |Qualität      | Als ein User möchte ich die Möglichkeit haben eine Runde neu zu starten, damit ich nochmals spielen kann.      |
-| 8  | Muss  |Qualität    | Als ein User möchte ich, dass die Benutzeroberfläche verständlich gestaltet ist, damit man sich besser Zurecht findet.   |
-| 9  | Muss   | Qualität  | Als ein User möchte ich, dass das Spiel mit verschiedenen Webbrowsern kompatibel ist, damit ich es auf verschiedenen Webbrowsern spielen kann.|
+| US-№ | Verbindlichkeit | Typ        | Beschreibung                                                                                                                                   |
+| ---- | --------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | Muss            | Funktional | Als ein User möchte ich das Spielfeld sehen können, damit ich meine Spielzüge planen kann.                                                     |
+| 2    | Muss            | Funktional | Als ein User möchte ich X oder O in ein Feld machen können, um ein Spielzug zu spielen.                                                        |
+| 3    | Muss            | Funktional | Als ein User möchte ich eine Anzeige sehen, damit ich weiss welcher Spieler an der Reihe ist.                                                  |
+| 4    | Muss            | Funktional | Als ein User möchte ich, dass ich gegen den Computer spielen kann, damit ich das Spiel spielen kann.                                           |
+| 5    | Kann            | Kann       | Als ein User möchte ich, dass ein Zweispielermodus spielen kann ohne Computer, damit ich mit Freunden spielen kann.                            |
+| 6    | Muss            | Qualität   | Als ein User möchte ich eine Punkteanzeige haben, damit ich weiss wer am Gewinnen ist.                                                         |
+| 7    | Muss            | Qualität   | Als ein User möchte ich die Möglichkeit haben eine Runde neu zu starten, damit ich nochmals spielen kann.                                      |
+| 8    | Muss            | Qualität   | Als ein User möchte ich, dass die Benutzeroberfläche verständlich gestaltet ist, damit man sich besser Zurecht findet.                         |
+| 9    | Muss            | Qualität   | Als ein User möchte ich, dass das Spiel mit verschiedenen Webbrowsern kompatibel ist, damit ich es auf verschiedenen Webbrowsern spielen kann. |
 
 ### 1.3 Testfälle
 
-| TC-№ | Ausgangslage | Eingabe | Erwartete Ausgabe |
-| ---- | ------------ | ------- | ----------------- |
-| 1.1  | Webseite gestartet    | Spiel starten klicken    |  Spiel mit Spielfeld wird geöffnet    |
-| 2.1  |  Spiel gestartet  | x oder o ausgewählt | x oder o wird in einem Feld platziert   |
-| 3.1  | Spiel gestartet |    |   Spieler x oder o ist dran |
-| 4.1  | Webseite gestartet | Gegen Computer spielen anklicken | Spiel gegen Computer wird gestartet |
-| 5.1  | Webseite gestartet | Gegen anderen Spieler spielen anklicken | Spiel gegen anderen Spieler wird gestartet |
-| 6.1  | Spiel gestartet |           | Punktestand wird angezeigt |
-| 7.1  | Runde beenden angeklickt | neue Runde starten anklicken | neue Runde startet |
-| 8.1  | Webseite gestarte |            | Benutzerfreundliche Webseite wird angezeigt |
-| 9.1  | Webseite wird auf verschiedenen Browsern gestartet |        |funktionierendes Spiel  |
-
-
-✍️ Die Nummer hat das Format `N.m`, wobei `N` die Nummer der User Story ist, die der Testfall abdeckt, und `m` von `1` an nach oben gezählt. Beispiel: Der dritte Testfall, der die zweite User Story abdeckt, hat also die Nummer `2.3`.
+| TC-№ | Ausgangslage                                       | Eingabe                                 | Erwartete Ausgabe                           |
+| ---- | -------------------------------------------------- | --------------------------------------- | ------------------------------------------- |
+| 1.1  | Webseite gestartet                                 | Spiel starten klicken                   | Spiel mit Spielfeld wird geöffnet           |
+| 2.1  | Spiel gestartet                                    | x oder o ausgewählt                     | x oder o wird in einem Feld platziert       |
+| 3.1  | Spiel gestartet                                    |                                         | Spieler x oder o ist dran                   |
+| 4.1  | Webseite gestartet                                 | Gegen Computer spielen anklicken        | Spiel gegen Computer wird gestartet         |
+| 5.1  | Webseite gestartet                                 | Gegen anderen Spieler spielen anklicken | Spiel gegen anderen Spieler wird gestartet  |
+| 6.1  | Spiel gestartet                                    |                                         | Punktestand wird angezeigt                  |
+| 7.1  | Runde beenden angeklickt                           | neue Runde starten anklicken            | neue Runde startet                          |
+| 8.1  | Webseite gestarte                                  |                                         | Benutzerfreundliche Webseite wird angezeigt |
+| 9.1  | Webseite wird auf verschiedenen Browsern gestartet |                                         | funktionierendes Spiel                      |
 
 ### 1.4 Diagramme
 
-✍️Fügen Sie hier ein Use Case-Diagramm mit mindestens 3 Anwendungsfällen ein; und eine Skizze davon, wie Ihre Netzseite aussehen sollte.
+![Alt text](<Use Case Diagram.png>)
 
 ## 2 Planen
 
@@ -56,7 +55,7 @@
 | 1.A  |       |           |              |               |
 | ...  |       |           |              |               |
 
-Total: 
+Total:
 
 ✍️ Die Nummer hat das Format `N.m`, wobei `N` die Nummer der User Story ist, auf die sich das Arbeitspaket bezieht, und `m` von `A` an nach oben buchstabiert. Beispiel: Das dritte Arbeitspaket, das die zweite User Story betrifft, hat also die Nummer `2.C`.
 

@@ -29,6 +29,10 @@
 | 7    | Muss            | Qualität   | Als ein User möchte ich die Möglichkeit haben eine Runde neu zu starten, damit ich nochmals spielen kann.                                      |
 | 8    | Muss            | Qualität   | Als ein User möchte ich, dass die Benutzeroberfläche verständlich gestaltet ist, damit man sich besser Zurecht findet.                         |
 | 9    | Muss            | Qualität   | Als ein User möchte ich, dass das Spiel mit verschiedenen Webbrowsern kompatibel ist, damit ich es auf verschiedenen Webbrowsern spielen kann. |
+| 10   | Kann            | Qualität   | Als User möchte ich, dass eine Soundanimation abgespielt wird, wenn ich Gewinne, damit das Spiel interessanter wird.     |
+| 11   | Muss            | Qualität |  Als User möchte ich, dass es eine Online Rangliste gibt, in der die Besten Siegesserien von Spielern aufgezeigt werden, damit ich mich mit anderen Spielern vergleichen kann.                               |
+| 12   | Muss            | Qualität |  Als User möchte ich, dass es einen Button gibt, welcher wenn ich ihn anwähle, die Spielregeln von TicTacToe aufgezeigt werden.   |
+| 13   | Muss            | Funktional |Als User möchte ich ein Benutzerprofil erstellen können, damit ich in der Online Rangliste angezeigt werden kann.  |
 
 ### 1.3 Testfälle
 
@@ -41,8 +45,12 @@
 | 5.1  | Webseite gestartet                                 | Gegen anderen Spieler spielen anklicken | Spiel gegen anderen Spieler wird gestartet  |
 | 6.1  | Spiel gestartet                                    | -                                       | Punktestand wird angezeigt                  |
 | 7.1  | Runde beenden angeklickt                           | neue Runde starten anklicken            | neue Runde startet                          |
-| 8.1  | Webseite gestarte                                  | -                                       | Benutzerfreundliche Webseite wird angezeigt |
+| 8.1  | Webseite gestartet                                  | -                                       | Benutzerfreundliche Webseite wird angezeigt |
 | 9.1  | Webseite wird auf verschiedenen Browsern gestartet | -                                       | funktionierendes Spiel                      |
+| 10.1  | Spiel Gewonnen                                    | -                                       | Soundanimation
+| 11.1  | Benutzerprofil erstellt und Spiel gespielt        | -                                       | Anzeige Online Rangliste
+| 12.1  | Webseite gestartet                                 | Click auf Spielregelbutton                                       | Spielregeln
+| 13.1  | Webseite gestarte                                  | Name des Spielers                                       | Benutzerprofil
 
 ### 1.4 Diagramme
 
@@ -62,8 +70,13 @@
 | 7.A  | 22.12.2023 | Müller    | Hier wird die Funktion um ein Spiel neu starten zu können implementiert.     | 40 Min        |
 | 8.A  | 22.12.2023 | Müller    | Hier wird die Benutzeroberfläche übersichtlich gestaltet                     | 120 Min       |
 | 9.A  | 22.12.2023 | Müller    | Hier wird geschaut, dass das spiel auf allen Webbrowsern funktioniert.       | 60 Min        |
+| 10.A | 22.12.2023 | Sacher    | Hier wird, wenn das Spiel gewonnen wird eine Soundanimation abgespielt.      | 30 Min        |
+| 11.A | 22.12.2023 | Sacher    | Hier wird die Online Rangliste hinzugefügt.                                  | 45 Min        |
+| 12.A | 22.12.2023 | Sacher    | Hier wird der Spielregelbutton hinzugefügt.                                  | 30 Min        |
+| 13.A | 22.12.2023 | Sacher    | Hier wird das Benutzerprofil hinzugefügt und abgespeichert.                  | 60 Min        |
 
-Total:
+
+Total: 1055 Min.
 
 ✍️ Ein Arbeitspaket sollte etwa 45' für eine Person in Anspruch nehmen. Die totale Anzahl Arbeitspakete sollte etwa Folgendem entsprechen: `Anzahl R-Sitzungen` ╳ `Anzahl Gruppenmitglieder` ╳ `4`. Wenn Sie also zu dritt an einem Projekt arbeiten, für welches zwei R-Sitzungen geplant sind, sollten Sie auf `2` ╳ `3` ╳`4` = `24` Arbeitspakete kommen. Sollten Sie merken, dass Sie hier nicht genügend Arbeitspakte haben, denken Sie sich weitere "Kann"-User Stories für Kapitel 1.2 aus.
 

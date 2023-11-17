@@ -1,24 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Initialisiere die Default-Seite
-    loadPage("index");
-  
-    // Füge den Click-Event-Listener zu den Navigation-Links hinzu
-    const buttonList = document.querySelector(".Button");
-    buttonList.addEventListener("click", function (event) {
-      if (event.target.tagName === "A") {
-        event.preventDefault();
-        const targetPage = event.target.getAttribute("href").substring(1); // Entferne das "#" Symbol
-        loadPage(targetPage);
-      }
+  document.getElementById("Anleitung").style.display = "none";
+  document.getElementById("Computer").style.display = "none";
+  document.getElementById("1vs1").style.display = "none";
+  document.getElementById("TicTacToe").style.display = "none";
+
+  document
+    .querySelector('a[href="#Anleitung"]')
+    .addEventListener("click", function () {
+      showView("Anleitung");
     });
-  });
-  
-  function loadPage(page) {
-    fetch(`${page}.html`)
-      .then((response) => response.text())
-      .then((html) => {
-        document.getElementById("content").innerHTML = html;
-        document.getElementById("pageTitle").innerText = page; // Setze den Seitentitel dynamisch
-      })
-      .catch((error) => console.error("Error loading page:", error));
-  }
+
+  document
+    .querySelector('a[href="#Computer"]')
+    .addEventListener("click", function () {
+      showView("TicTacToe");
+    });
+
+  document
+    .querySelector('a[href="#1vs1"]')
+    .addEventListener("click", function () {
+      showView("1vs1");
+    });
+
+  document
+    .querySelector('a[href="#TicTacToe"]')
+    .addEventListener("click", function () {
+      showView("TicTacToe");
+    });
+});
+
+function showView(viewId) {
+  document.getElementById("Anleitung").style.display = "none";
+  document.getElementById("Computer").style.display = "none";
+  document.getElementById("1vs1").style.display = "none";
+  document.getElementById("TicTacToe").style.display = "none";
+
+  document.getElementById(viewId).style.display = "block";
+}

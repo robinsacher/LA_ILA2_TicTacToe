@@ -36,13 +36,13 @@
 | ---- | -------------------------------------------------- | --------------------------------------- | ------------------------------------------- |
 | 1.1  | Webseite gestartet                                 | Spiel starten klicken                   | Spiel mit Spielfeld wird geöffnet           |
 | 2.1  | Spiel gestartet                                    | x oder o ausgewählt                     | x oder o wird in einem Feld platziert       |
-| 3.1  | Spiel gestartet                                    |                                         | Spieler x oder o ist dran                   |
+| 3.1  | Spiel gestartet                                    | -                                       | Spieler x oder o ist dran                   |
 | 4.1  | Webseite gestartet                                 | Gegen Computer spielen anklicken        | Spiel gegen Computer wird gestartet         |
 | 5.1  | Webseite gestartet                                 | Gegen anderen Spieler spielen anklicken | Spiel gegen anderen Spieler wird gestartet  |
-| 6.1  | Spiel gestartet                                    |                                         | Punktestand wird angezeigt                  |
+| 6.1  | Spiel gestartet                                    | -                                       | Punktestand wird angezeigt                  |
 | 7.1  | Runde beenden angeklickt                           | neue Runde starten anklicken            | neue Runde startet                          |
-| 8.1  | Webseite gestarte                                  |                                         | Benutzerfreundliche Webseite wird angezeigt |
-| 9.1  | Webseite wird auf verschiedenen Browsern gestartet |                                         | funktionierendes Spiel                      |
+| 8.1  | Webseite gestarte                                  | -                                       | Benutzerfreundliche Webseite wird angezeigt |
+| 9.1  | Webseite wird auf verschiedenen Browsern gestartet | -                                       | funktionierendes Spiel                      |
 
 ### 1.4 Diagramme
 

@@ -83,3 +83,19 @@ header {
   margin: 40px;
   width: 500px;
 }
+
+.animierter-button {
+  background-color: #333; /* Graue Hintergrundfarbe */
+  color: #ffffff; /* Weiße Schriftfarbe */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+.animierter-button:hover {
+  background-color: #606060; /* Dunklere Grauton beim Hover */
+  transform: scale(1.1); /* Vergrößern beim Hover */
+}

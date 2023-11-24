@@ -99,3 +99,34 @@ header {
   background-color: #606060; /* Dunklere Grauton beim Hover */
   transform: scale(1.1); /* Vergrößern beim Hover */
 }
+
+
+.neustart {
+  background-color: black;
+  position: fixed;
+  inset: 0;  /*überdeckt die ganze seite*/
+  color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.neustart-button {
+  font-size: 100%;
+  background-color: #00ff00;
+  padding: 0.25cm;
+ 
+}
+
+ .neustart-button:hover{
+  background-color: #00ff00;
+  border-radius: 20px;
+ }
+
+ .neustart.sehbar {
+  opacity: 1;
+  pointer-events: all;
+ }

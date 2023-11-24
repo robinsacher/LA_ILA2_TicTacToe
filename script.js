@@ -48,8 +48,11 @@ function showView(viewId) {
   document.getElementById(viewId).style.display = "block";
 }
 
+Neustart_Button.addEventListener("click", spielStarten);
+
 
 //Spielfunktionen
+spielStarten();
 document.addEventListener('DOMContentLoaded', function () {
   const spielerX = 'X';
   const spielerO = 'O';
@@ -77,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
       setzeSymbol(ausgewaehltesFeld, aktuellerSpieler);
 
       if (hatGewonnen()) {
-        alert(`Spieler ${aktuellerSpieler} hat gewonnen!`);
+        alert(spielBeenden());
         resetSpielbrett();
       } else if (istUnentschieden()) {
         alert('Unentschieden!');
@@ -103,6 +106,21 @@ document.addEventListener('DOMContentLoaded', function () {
   function wechsleSpieler() {
     aktuellerSpieler = aktuellerSpieler === spielerX ? spielerO : spielerX;
   }
+
+  function spielBeenden(){
+    if(aktuelleKlasse === spieler) {
+      Neustart_Text.innerText = "Spieler ${aktuellerSpieler} hat gewonnen!";
+    }
+    else {
+      Neustart_Text.innerText = "${}hat gewonnen";
+    }
+    Neustart.classlist.add(Neustart_Sehbar);
+  }
+
+  const Neustart = "neustart";
+  const Neustart_Text = "neustart-text";
+  const Neustart_Button = "neustart-button";
+  const Neustart_Sehbar = "neustar-sehbar";
 
   function hatGewonnen() {
     const gewinnKombinationen = [

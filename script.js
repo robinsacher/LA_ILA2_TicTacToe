@@ -1,9 +1,9 @@
 //Spielmodi auswählen
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("Anleitung").style.display = "none";
-  document.getElementById("Computer").style.display = "none";
-  document.getElementById("1vs1").style.display = "none";
-  document.getElementById("TicTacToe").style.display = "none";
+  document.getElementById("Spielbrett-Computer").style.display = "none"; // Update hier: Verwendet die neue ID
+  document.getElementById("Spielbrett-1vs1").style.display = "none";
+  document.getElementById("Winning-message").style.display = "none"; // Update hier: Verwendet die neue ID
 
   document
     .querySelector('a[href="#Anleitung"]')
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .querySelector('a[href="#Computer"]')
     .addEventListener("click", function () {
-      showView("TicTacToe");
+      showView("Computer"); // Update hier: Verwendet die neue ID
       initializeTicTacToe(true); // true, um gegen den Computer zu spielen
     });
 
@@ -29,48 +29,50 @@ document.addEventListener("DOMContentLoaded", function () {
     .querySelector('a[href="#TicTacToe"]')
     .addEventListener("click", function () {
       showView("TicTacToe");
-      initializeTicTacToe(false); 
+      initializeTicTacToe(false);
     });
 
-  const startButton1vs1 = document.querySelector('#1vs1 .animierter-button');
-  startButton1vs1.addEventListener('click', start1vs1Game);
+  const startButton1vs1 = document.querySelector("#1vs1 .animierter-button");
+  startButton1vs1.addEventListener("click", start1vs1Game);
 
-  const startButtonTicTacToe = document.querySelector('#TicTacToe .animierter-button');
-  startButtonTicTacToe.addEventListener('click', startTicTacToeGame);
+  const startButtonTicTacToe = document.querySelector(
+    "#TicTacToe .animierter-button"
+  );
+  startButtonTicTacToe.addEventListener("click", startTicTacToeGame);
 });
 
 function showView(viewId) {
   document.getElementById("Anleitung").style.display = "none";
-  document.getElementById("Computer").style.display = "none";
+  document.getElementById("Spielbrett-Computer").style.display = "none"; // Update hier: Verwendet die neue ID
   document.getElementById("1vs1").style.display = "none";
-  document.getElementById("TicTacToe").style.display = "none";
+  document.getElementById("Winning-message").style.display = "none"; // Update hier: Verwendet die neue ID
 
   document.getElementById(viewId).style.display = "block";
 }
 
 Neustart_Button.addEventListener("click", spielStarten);
 
-
 //Spielfunktionen
 spielStarten();
-document.addEventListener('DOMContentLoaded', function () {
-  const spielerX = 'X';
-  const spielerO = 'O';
+document.addEventListener("DOMContentLoaded", function () {
+  const spielerX = "X";
+  const spielerO = "O";
   let aktuellerSpieler = spielerX;
   let einzelspielerModus = false;
 
-  const felder = document.querySelectorAll('.Feld');
-  const startButton = document.querySelector('.animierter-button');
-  startButton.addEventListener('click', startSpiel);
+  const felder = document.querySelectorAll(".Feld");
+  const startButton = document.querySelector(".animierter-button");
+  startButton.addEventListener("click", startSpiel);
 
   function startSpiel() {
-    einzelspielerModus = document.querySelector('#1vs1').style.display !== 'none';
+    einzelspielerModus =
+      document.querySelector("#1vs1").style.display !== "none";
 
-    felder.forEach(feld => {
-      feld.addEventListener('click', handleFeldClick, { once: true });
+    felder.forEach((feld) => {
+      feld.addEventListener("click", handleFeldClick, { once: true });
     });
 
-    startButton.style.display = 'none';
+    startButton.style.display = "none";
   }
 
   function handleFeldClick(e) {
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
         alert(spielBeenden());
         resetSpielbrett();
       } else if (istUnentschieden()) {
-        alert('Unentschieden!');
+        alert("Unentschieden!");
         resetSpielbrett();
       } else {
         wechsleSpieler();
@@ -96,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function istFeldLeer(feld) {
-    return feld.innerText === '';
+    return feld.innerText === "";
   }
 
   function setzeSymbol(feld, spieler) {
@@ -107,20 +109,19 @@ document.addEventListener('DOMContentLoaded', function () {
     aktuellerSpieler = aktuellerSpieler === spielerX ? spielerO : spielerX;
   }
 
-  function spielBeenden(){
-    if(aktuelleKlasse === spieler) {
+  function spielBeenden() {
+    if (aktuelleKlasse === spieler) {
       Neustart_Text.innerText = "Spieler ${aktuellerSpieler} hat gewonnen!";
-    }
-    else {
+    } else {
       Neustart_Text.innerText = "${}hat gewonnen";
     }
     Neustart.classlist.add(Neustart_Sehbar);
   }
 
-  const Neustart = "neustart";
-  const Neustart_Text = "neustart-text";
-  const Neustart_Button = "neustart-button";
-  const Neustart_Sehbar = "neustar-sehbar";
+  const Neustart = document.getElementById("neustart");
+  const Neustart_Text = document.getElementById("neustart-text");
+  const Neustart_Button = document.getElementById("neustart-button");
+  const Neustart_Sehbar = "neustart-sehbar";
 
   function hatGewonnen() {
     const gewinnKombinationen = [
@@ -134,10 +135,10 @@ document.addEventListener('DOMContentLoaded', function () {
       [2, 4, 6],
     ];
 
-    return gewinnKombinationen.some(kombination => {
+    return gewinnKombinationen.some((kombination) => {
       const [a, b, c] = kombination;
       return (
-        felder[a].innerText !== '' &&
+        felder[a].innerText !== "" &&
         felder[a].innerText === felder[b].innerText &&
         felder[a].innerText === felder[c].innerText
       );
@@ -145,34 +146,88 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function istUnentschieden() {
-    return Array.from(felder).every(feld => feld.innerText !== '');
+    return Array.from(felder).every((feld) => feld.innerText !== "");
   }
 
   function resetSpielbrett() {
-    felder.forEach(feld => {
-      feld.innerText = '';
+    felder.forEach((feld) => {
+      feld.innerText = "";
     });
     aktuellerSpieler = spielerX;
   }
 
   function computerZug() {
-    const leereFelder = Array.from(felder).filter(feld => istFeldLeer(feld));
+    const leereFelder = Array.from(felder).filter((feld) => istFeldLeer(feld));
 
     if (leereFelder.length > 0) {
-      const zufaelligesFeld = leereFelder[Math.floor(Math.random() * leereFelder.length)];
+      const zufaelligesFeld =
+        leereFelder[Math.floor(Math.random() * leereFelder.length)];
       setzeSymbol(zufaelligesFeld, spielerO);
 
       if (hatGewonnen()) {
         alert(`Spieler ${spielerO} hat gewonnen!`);
         resetSpielbrett();
       } else if (istUnentschieden()) {
-        alert('Unentschieden!');
+        alert("Unentschieden!");
         resetSpielbrett();
       } else {
         wechsleSpieler();
       }
     }
   }
+
+  // Minimax-Algorithmus
+  function minimax(board, spieler) {
+    const verfuegbareFelder = Array.from(board).filter((feld) =>
+      istFeldLeer(feld)
+    );
+
+    if (hatGewonnen(board, spielerO)) {
+      return { score: 10 };
+    } else if (hatGewonnen(board, spielerX)) {
+      return { score: -10 };
+    } else if (verfuegbareFelder.length === 0) {
+      return { score: 0 };
+    }
+
+    const zuege = [];
+
+    for (let i = 0; i < verfuegbareFelder.length; i++) {
+      const zug = {};
+      zug.index = board.indexOf(verfuegbareFelder[i]);
+      board[zug.index].innerText = spieler;
+
+      if (spieler === spielerO) {
+        const result = minimax(board, spielerX);
+        zug.score = result.score;
+      } else {
+        const result = minimax(board, spielerO);
+        zug.score = result.score;
+      }
+
+      board[zug.index].innerText = "";
+      zuege.push(zug);
+    }
+
+    let bestMove;
+    if (spieler === spielerO) {
+      let bestScore = -Infinity;
+      for (let i = 0; i < zuege.length; i++) {
+        if (zuege[i].score > bestScore) {
+          bestScore = zuege[i].score;
+          bestMove = i;
+        }
+      }
+    } else {
+      let bestScore = Infinity;
+      for (let i = 0; i < zuege.length; i++) {
+        if (zuege[i].score < bestScore) {
+          bestScore = zuege[i].score;
+          bestMove = i;
+        }
+      }
+    }
+
+    return zuege[bestMove];
+  }
 });
-
-

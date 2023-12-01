@@ -11,67 +11,25 @@
     <header>
       <h1>TicTacToe</h1>
     </header>
-    <ul class="Button">
-      <li><a href="#Anleitung">Anleitung</a></li>
-      <li><a href="#Computer">Computer</a></li>
-      <li><a href="#1vs1">1vs1</a></li>
-    </ul>
-    <div id="content"></div>
+    <h2>Computer</h2>
+    <div class="board circle" id="board">
+      <div class="cell x" data-cell></div>
+      <div class="cell circle" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+    </div>
 
-    <div id="Anleitung" style="display: none">
-      <h2>Anleitung</h2>
-      <p>
-        Tic Tac Toe ist ein Spiel für zwei Spieler, die abwechselnd X und O in
-        ein 3x3 Raster setzen. Der Spieler, der zuerst drei seiner Symbole in
-        einer horizontalen, vertikalen oder diagonalen Reihe hat, gewinnt das
-        Spiel.
+    <div class="neustart" id="Winning-message">
+      <p class="neustart-text">
+        Hier können sie das Spiel neustarten oder beenden
       </p>
-      <p>
-        Um ein Feld zu setzen, klicke auf ein leeres Feld im Spielbrett, dir
-        wird dabei angezeigt, ob du oder dein Gegner gerade an der Reihe bist.
-      </p>
-      <p>Viel Erfolg</p>
-    </div>
-
-    <div id="Computer" style="display: none">
-      <h2>Computer</h2>
-      <a href="#TicTacToe">Zum Tic Tac Toe Spiel</a>
-    </div>
-
-    <div id="1vs1" style="display: none">
-      <h2>1vs1</h2>
-      <button class="restart">restart</button>
-      <div class="Spielbrett">
-        <div class="Feld" data-cell-index="0"></div>
-        <div class="Feld" data-cell-index="1"></div>
-        <div class="Feld" data-cell-index="2"></div>
-        <div class="Feld" data-cell-index="3"></div>
-        <div class="Feld" data-cell-index="4"></div>
-        <div class="Feld" data-cell-index="5"></div>
-        <div class="Feld" data-cell-index="6"></div>
-        <div class="Feld" data-cell-index="7"></div>
-        <div class="Feld" data-cell-index="8"></div>
-      </div>
-    </div>
-
-    <div id="TicTacToe" style="display: none">
-      <h2>Computer</h2>
-      <button class="restart">restart</button>
-      <div class="Spielbrett">
-        <div class="Feld" data-index="0"></div>
-        <div class="Feld" data-index="1"></div>
-        <div class="Feld" data-index="2"></div>
-        <div class="Feld" data-index="3"></div>
-        <div class="Feld" data-index="4"></div>
-        <div class="Feld" data-index="5"></div>
-        <div class="Feld" data-index="6"></div>
-        <div class="Feld" data-index="7"></div>
-        <div class="Feld" data-index="8"></div>
-      </div>
-    </div>
-    <div class="neustart">
-      <p class="neustart-text">afsagfdgdfgdg</p>
       <button class="neustart-button">Erneut spielen</button>
+      <button class="beenden-button">Spiel beenden</button>
     </div>
   </body>
 </html>

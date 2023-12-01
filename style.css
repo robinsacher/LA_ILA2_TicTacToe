@@ -84,7 +84,7 @@ header {
   width: 500px;
 }
 
-.animierter-button {
+.restart {
   background-color: #333; /* Graue Hintergrundfarbe */
   color: #ffffff; /* Weiße Schriftfarbe */
   border: none;
@@ -95,16 +95,15 @@ header {
   transition: background-color 0.1s ease, transform 0.1s ease;
 }
 
-.animierter-button:hover {
+.restart:hover {
   background-color: #606060; /* Dunklere Grauton beim Hover */
   transform: scale(1.1); /* Vergrößern beim Hover */
 }
 
-
 .neustart {
   background-color: black;
   position: fixed;
-  inset: 0;  /*überdeckt die ganze seite*/
+  inset: 0; /*überdeckt die ganze seite*/
   color: green;
   display: flex;
   flex-direction: column;
@@ -118,17 +117,14 @@ header {
   font-size: 100%;
   background-color: #00ff00;
   padding: 0.25cm;
- 
 }
 
- .neustart-button:hover{
+.neustart-button:hover {
   background-color: #00ff00;
   border-radius: 20px;
- }
+}
 
- .neustart.sehbar {
+.neustart.sehbar {
   opacity: 1;
   pointer-events: all;
- }
-
- 
+}

@@ -16,17 +16,26 @@ const winningMessageElement = document.getElementById("winningMessage");
 const restartButton = document.querySelector(".restartButton");
 const winningMessageTextElement = document.querySelector(".winning-message p");
 let circleTurn;
+let againstComputer;
 
-cellElements.forEach((cell) => {
-  cell.addEventListener("click", handleClick, { once: true });
-});
+startGame();
 
-spielStarten();
+restartButton.addEventListener("click", startGame);
 
-restartButton.addEventListener("click", spielStarten);
+function startGameAgainstPlayer() {
+  againstComputer = false;
+  startGame();
+}
 
-function spielStarten() {
+function startGameAgainstComputer() {
+  againstComputer = true;
+  startGame();
+}
+
+function startGame() {
+  document.getElementById("menu").style.display = "flex";
   circleTurn = false;
+  updateGameModeText();
   cellElements.forEach((cell) => {
     cell.classList.remove(X_CLASS);
     cell.classList.remove(CIRCLE_CLASS);
@@ -35,6 +44,15 @@ function spielStarten() {
   });
   setBoardHoverClass();
   winningMessageElement.classList.remove("show");
+
+  if (againstComputer && circleTurn) {
+    makeComputerMove();
+  }
+}
+
+function updateGameModeText() {
+  const gameModeTextElement = document.getElementById("gameModeText");
+  gameModeTextElement.innerText = againstComputer ? "Computer" : "1 gegen 1";
 }
 
 function handleClick(e) {
@@ -48,8 +66,12 @@ function handleClick(e) {
   } else if (isDraw()) {
     endGame(true);
   } else {
-    swapTurns();
-    setBoardHoverClass();
+    if (againstComputer) {
+      makeComputerMove();
+    } else {
+      swapTurns();
+      setBoardHoverClass();
+    }
   }
 }
 
@@ -88,6 +110,7 @@ function endGame(draw) {
     } hat gewonnen!`;
   }
   winningMessageElement.classList.add("show");
+  document.getElementById("menu").style.display = "block";
 }
 
 function isDraw() {
@@ -96,4 +119,72 @@ function isDraw() {
       cell.classList.contains(X_CLASS) || cell.classList.contains(CIRCLE_CLASS)
     );
   });
+}
+
+function makeComputerMove() {
+  const emptyCells = [...cellElements].filter(
+    (cell) =>
+      !cell.classList.contains(X_CLASS) &&
+      !cell.classList.contains(CIRCLE_CLASS)
+  );
+
+  // Verwenden Sie den Minimax-Algorithmus, um den besten Zug zu finden
+  const bestMove = getBestMove(emptyCells, circleTurn ? CIRCLE_CLASS : X_CLASS);
+  const cell = emptyCells[bestMove.index];
+
+  setTimeout(() => {
+    placeMark(cell, circleTurn ? CIRCLE_CLASS : X_CLASS);
+
+    if (checkWin(circleTurn ? CIRCLE_CLASS : X_CLASS) || isDraw()) {
+      endGame(checkWin(circleTurn ? CIRCLE_CLASS : X_CLASS) ? false : true);
+    } else {
+      swapTurns();
+      setBoardHoverClass();
+    }
+  }, 10000);
+  en;
+}
+
+function getBestMove(emptyCells, player) {
+  // Minimax algorithm
+  const minimax = (board, depth, maximizingPlayer) => {
+    const scores = {
+      X: -1,
+      O: 1,
+      draw: 0,
+    };
+
+    if (checkWin(X_CLASS)) return scores.X - depth;
+    if (checkWin(CIRCLE_CLASS)) return scores.O + depth;
+    if (isDraw()) return scores.draw;
+
+    const symbol = maximizingPlayer
+      ? player
+      : player === X_CLASS
+      ? CIRCLE_CLASS
+      : X_CLASS;
+    let bestScore = maximizingPlayer ? -Infinity : Infinity;
+    let bestMove;
+
+    emptyCells.forEach((cell, index) => {
+      const originalClass = cell.classList.value;
+      cell.classList.add(symbol);
+
+      const score = minimax(board, depth + 1, !maximizingPlayer);
+
+      cell.classList.value = originalClass;
+
+      if (
+        (maximizingPlayer && score > bestScore) ||
+        (!maximizingPlayer && score < bestScore)
+      ) {
+        bestScore = score;
+        bestMove = index;
+      }
+    });
+
+    return { score: bestScore, index: bestMove };
+  };
+
+  return minimax(emptyCells, 0, true);
 }

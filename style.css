@@ -164,3 +164,24 @@ header {
 .winning-message.show {
   display: flex;
 }
+
+#menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#menu button {
+  margin: 5px;
+  padding: 15px 20px;
+  font-size: 18px;
+  background-color: white;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+#menu button:hover {
+  background-color: black;
+  color: white;
+}

@@ -11,7 +11,13 @@
     <header>
       <h1>TicTacToe</h1>
     </header>
-    <h2>Computer</h2>
+
+    <div id="menu">
+      <button onclick="startGameAgainstPlayer()">1 gegen 1</button>
+      <button onclick="startGameAgainstComputer()">Gegen Computer</button>
+    </div>
+
+    <h2 id="gameModeText"></h2>
     <div class="board" id="board">
       <div class="cell" data-cell></div>
       <div class="cell" data-cell></div>
@@ -25,7 +31,7 @@
     </div>
 
     <div class="winning-message" id="winningMessage">
-      <p>Hier können sie das Spiel neustarten oder beenden</p>
+      <p>Hier können Sie das Spiel neustarten oder beenden</p>
       <button class="restartButton">Erneut spielen</button>
     </div>
   </body>

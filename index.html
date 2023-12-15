@@ -15,6 +15,7 @@
     <div id="menu">
       <button onclick="startGameAgainstPlayer()">1 gegen 1</button>
       <button onclick="startGameAgainstComputer()">Gegen Computer</button>
+      <button onclick="zeigeAnleitung()">Anleitung</button>
     </div>
 
     <h2 id="gameModeText"></h2>
@@ -33,6 +34,20 @@
     <div class="winning-message" id="winningMessage">
       <p>Hier können Sie das Spiel neustarten oder beenden</p>
       <button class="restartButton">Erneut spielen</button>
+      <button class="endButton" id="endButton" onclick="zeigeAnleitung()">
+        Spiel beenden
+      </button>
+    </div>
+
+    <div id="anleitung" style="display: none">
+      <h2>Anleitung</h2>
+      <p>
+        Auf dieser Website kann man Tic Tac Toe spielen. Es gibt zwei Spielmodi.
+        Im 1 gegen 1 Spielermodus kann man gegen einen Freund spielen, indem man
+        sich mit der Benutzereingabe abwechselt. Im Spielmodus gegen den
+        Computer spielt man gegen einen Computer, welcher durch einen
+        Algorithmus gesteuert wird.
+      </p>
     </div>
   </body>
 </html>

@@ -123,6 +123,7 @@ h2 {
 p {
   color: white;
   font-size: 24px;
+  margin: 50px;
 }
 
 header {
@@ -184,4 +185,9 @@ header {
 #menu button:hover {
   background-color: black;
   color: white;
+}
+
+#anleitung {
+  max-width: 700px;
+  background-color: rgb(56, 56, 56);
 }

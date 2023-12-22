@@ -137,6 +137,7 @@ function checkWin(currentClass) {
   });
 }
 
+
 function endGame(draw) {
   if (draw) {
     winningMessageTextElement.innerText = "Unentschieden!";

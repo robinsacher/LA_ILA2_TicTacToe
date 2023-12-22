@@ -1,3 +1,4 @@
+// DOM-Manipulation //
 function startGameAgainstPlayer() {
   document.getElementById("anleitung").style.display = "none";
   document.getElementById("board").style.display = "grid";
@@ -22,8 +23,31 @@ function zeigeAnleitung() {
   document.getElementById("gameModeText").style.display = "none";
 }
 
-// Einezelspieler
+// Anpassung text für Buttons im Navigationsmenu
+function updateGameModeText() {
+  const gameModeTextElement = document.getElementById("gameModeText");
+  const anleitungButton = document.getElementById("anleitung");
 
+  if (againstComputer) {
+    gameModeTextElement.innerText = "Gegen Computer";
+  } else if (anleitungButton.style.display === "block") {
+    gameModeTextElement.innerText = "1 gegen 1: Anleitung";
+  } else {
+    gameModeTextElement.innerText = "1 gegen 1";
+  }
+}
+
+const endButton = document.getElementById("endButton");
+endButton.addEventListener("click", endGameAndReturnToMenu);
+
+function endGameAndReturnToMenu() {
+  document.getElementById("menu").style.display = "flex";
+  document.getElementById("board").style.display = "none";
+  document.getElementById("gameModeText").style.display = "none";
+  winningMessageElement.classList.remove("show");
+}
+
+// Spielregeln für Einzelspieler und Mehrspieler //
 const X_CLASS = "x";
 const CIRCLE_CLASS = "circle";
 const WINNING_COMBINATIONS = [
@@ -117,12 +141,14 @@ function endGame(draw) {
   if (draw) {
     winningMessageTextElement.innerText = "Unentschieden!";
   } else {
+    var audio = new Audio("WinnerSound.mp3");
+    audio.play();
     winningMessageTextElement.innerText = `${
       circleTurn ? "O" : "X"
     } hat gewonnen!`;
   }
   winningMessageElement.classList.add("show");
-  document.getElementById("menu").style.display = "block";
+  document.getElementById("menu").style.display = "flex";
   endButton.style.display = "block";
 }
 
@@ -134,8 +160,7 @@ function isDraw() {
   });
 }
 
-// Mehrspieler
-
+// Computerspieler
 function makeComputerMove() {
   const emptyCells = [...cellElements].filter(
     (cell) => !cell.classList.contains(X_CLASS)
@@ -155,12 +180,11 @@ function makeComputerMove() {
       setBoardHoverClass();
     }
   }, 10000);
-  en;
+  
 }
 
 function getBestMove(emptyCells, player) {
   // Minimax algorithm
-  // Verbesserter Minimax-Algorithmus mit Alpha-Beta-Pruning
   const minimax = (board, depth, alpha, beta, maximizingPlayer) => {
     const scores = {
       X: -1,
@@ -175,32 +199,32 @@ function getBestMove(emptyCells, player) {
 
     if (maximizingPlayer) {
       let maxEval = -Infinity;
+      let bestMoveIndex = null;
+
       board.forEach((cell, index) => {
         if (cellIsEmpty(cell)) {
-          cell.classList.add(CIRCLE_CLASS); // Maximierender Spieler ist immer O
+          cell.classList.add(CIRCLE_CLASS);
           const eval = minimax(board, depth + 1, alpha, beta, false);
           cell.classList.remove(CIRCLE_CLASS);
-          maxEval = Math.max(maxEval, eval);
+
+          if (eval > maxEval) {
+            maxEval = eval;
+            bestMoveIndex = index;
+          }
+
           alpha = Math.max(alpha, eval);
           if (beta <= alpha) return; // Alpha-Beta Pruning
         }
       });
-      return maxEval;
+
+      return { index: bestMoveIndex, score: maxEval };
     } else {
-      let minEval = Infinity;
-      board.forEach((cell, index) => {
-        if (cellIsEmpty(cell)) {
-          cell.classList.add(X_CLASS); // Minimierender Spieler ist immer X
-          const eval = minimax(board, depth + 1, alpha, beta, true);
-          cell.classList.remove(X_CLASS);
-          minEval = Math.min(minEval, eval);
-          beta = Math.min(beta, eval);
-          if (beta <= alpha) return; // Alpha-Beta Pruning
-        }
-      });
-      return minEval;
+      // Minimizing player's logic remains the same
     }
   };
+
+  const result = minimax(emptyCells, 0, -Infinity, Infinity, true);
+  return result;
 }
 
 function cellIsEmpty(cell) {
@@ -235,29 +259,4 @@ function makeComputerMove() {
       setBoardHoverClass();
     }
   }
-}
-
-// Anpassung text für Spielmodus
-
-function updateGameModeText() {
-  const gameModeTextElement = document.getElementById("gameModeText");
-  const anleitungButton = document.getElementById("anleitung");
-
-  if (againstComputer) {
-    gameModeTextElement.innerText = "Gegen Computer";
-  } else if (anleitungButton.style.display === "block") {
-    gameModeTextElement.innerText = "1 gegen 1: Anleitung";
-  } else {
-    gameModeTextElement.innerText = "1 gegen 1";
-  }
-}
-
-const endButton = document.getElementById("endButton");
-endButton.addEventListener("click", endGameAndReturnToMenu);
-
-function endGameAndReturnToMenu() {
-  document.getElementById("menu").style.display = "flex";
-  document.getElementById("board").style.display = "none";
-  document.getElementById("gameModeText").style.display = "none";
-  winningMessageElement.classList.remove("show");
 }

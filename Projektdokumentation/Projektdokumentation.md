@@ -16,7 +16,7 @@
 
 ✍️ Erklären Sie genauer in 50 bis 100 Wörtern, was genau Sie in diesem Projekt erreichen möchten, und was Sie dabei zu lernen hoffen.
 
-### 1.2 User Stories
+### 1.2 Anforderungen
 
 | US-№ | Verbindlichkeit | Typ        | Beschreibung                                                                                                                                   |
 | ---- | --------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -60,41 +60,54 @@
 | 2.A  | 22.12.2023 | Sacher    | Hier wird umgesetzt, dass man ein X oder O in das spielfeld platzieren kann. | 20 Min        |
 | 3.A  | 22.12.2023 | Sacher    | Hier wird die Anzeige umgesetzt, welcher spieler gerade an der Reihe ist.    | 20 Min        |
 | 4.A  | 22.12.2023 | Hitz      | Hier wird der Computergegner implementiert.                                  | 180 Min       |
-| 4.B  | 22.12.2023 | Hitz      | Hier wird der Computergegner implementiert.                                  | 180 Min       |
 | 5.A  | 22.12.2023 | Hitz      | Hier wird der Zweiscpielermodus umgesetzt.                                   | 60 Min        |
 | 6.A  | 22.12.2023 | Hitz      | Hier wird eine Punkteanzeige hinzugefügt.                                    | 60 Min        |
 | 7.A  | 22.12.2023 | Müller    | Hier wird die Funktion um ein Spiel neu starten zu können implementiert.     | 40 Min        |
 | 8.A  | 22.12.2023 | Müller    | Hier wird die Benutzeroberfläche übersichtlich gestaltet                     | 120 Min       |
 | 9.A  | 22.12.2023 | Müller    | Hier wird geschaut, dass das spiel auf allen Webbrowsern funktioniert.       | 60 Min        |
 | 10.A | 22.12.2023 | Sacher    | Hier wird, wenn das Spiel gewonnen wird eine Soundanimation abgespielt.      | 30 Min        |
-| 12.A | 22.12.2023 | Sacher    | Hier wird der Spielregelbutton hinzugefügt.                                  | 30 Min        |
+| 11.A | 22.12.2023 | Sacher    | Hier wird der Spielregelbutton hinzugefügt.                                  | 30 Min        |
 
-Total: 830 Min.
+Total: 650 Min.
 
 ✍️ Ein Arbeitspaket sollte etwa 45' für eine Person in Anspruch nehmen. Die totale Anzahl Arbeitspakete sollte etwa Folgendem entsprechen: `Anzahl R-Sitzungen` ╳ `Anzahl Gruppenmitglieder` ╳ `4`. Wenn Sie also zu dritt an einem Projekt arbeiten, für welches zwei R-Sitzungen geplant sind, sollten Sie auf `2` ╳ `3` ╳`4` = `24` Arbeitspakete kommen. Sollten Sie merken, dass Sie hier nicht genügend Arbeitspakte haben, denken Sie sich weitere "Kann"-User Stories für Kapitel 1.2 aus.
 
 ## 3 Entscheiden
 
-✍️ Dokumentieren Sie hier Ihre Entscheidungen und Annahmen, die Sie im Bezug auf Ihre User Stories und die Implementierung getroffen haben.
-
 ## 4 Realisieren
 
-| AP-№ | Datum | Zuständig | geplante Zeit | tatsächliche Zeit |
-| ---- | ----- | --------- | ------------- | ----------------- |
-| 1.A  |       |           |               |                   |
-| ...  |       |           |               |                   |
+| AP-№ | Datum      | Zuständig | geplante Zeit | tatsächliche Zeit |
+| ---- | ---------- | --------- | ------------- | ----------------- |
+| 1.A  | 17.11.2023 | Sacher    | 30 Min        | 180 Min           |
+| 2.A  | 17.11.2023 | Sacher    | 20 Min        | 60 Min            |
+| 3.A  | 24.11.2023 | Sacher    | 20 Min        | 40 Min            |
+| 4.A  | 01.12.2023 | Hitz      | 180 Min       | 210 Min           |
+| 5.A  | 08.12.2023 | Hitz      | 60 Min        | 100 Min           |
+| 6.A  | 01.12.2023 | Hitz      | 60 Min        | 110 Min           |
+| 7.A  | 15.12.2023 | Müller    | 40 Min        | 50 Min            |
+| 8.A  | 01.12.2023 | Müller    | 120 Min       | 100 Min           |
+| 9.A  | 22.12.2023 | Müller    | 60 Min        | 30 Min            |
+| 10.A | 15.12.2023 | Sacher    | 30 Min        | 10 Min            |
+| 11.A | 08.12.2023 | Sacher    | 30 Min        | 20 Min            |
 
 ✍️ Tragen Sie jedes Mal, wenn Sie ein Arbeitspaket abschließen, hier ein, wie lang Sie effektiv dafür hatten.
 
 ## 5 Kontrollieren
 
-| TC-№ | Datum | Resultat | Tester |
-| ---- | ----- | -------- | ------ |
-| 1.1  |       |          |        |
-| ...  |       |          |        |
+| Test-№ | TC-№ | Resultat | Datum      | Tester |
+| ------ | ---- | -------- | ---------- | ------ |
+| 1      | 1.1  |          | 22.12.2023 | Sacher |
+| 2      | 2.1  |          | 22.12.2023 | Sacher |
+| 3      | 3.1  |          | 22.12.2023 | Sacher |
+| 4      | 4.1  |          | 22.12.2023 | Sacher |
+| 5      | 5.1  |          | 22.12.2023 | Sacher |
+| 6      | 6.1  |          | 22.12.2023 | Sacher |
+| 7      | 7.1  |          | 22.12.2023 | Sacher |
+| 8      | 8.1  |          | 22.12.2023 | Sacher |
+| 9      | 9.1  |          | 22.12.2023 | Sacher |
+| 10     | 10.1 |          | 22.12.2023 | Sacher |
+| 11     | 11.1 |          | 22.12.2023 | Sacher |
 
 ✍️ Vergessen Sie nicht, ein Fazit hinzuzufügen, welches das Test-Ergebnis einordnet.
 
 ## 6 Auswerten
-
-✍️ Fügen Sie hier eine Verknüpfung zu Ihrem Lern-Bericht ein.

@@ -1,12 +1,12 @@
+:root {
+  --cell-size: 100px;
+  --mark-size: calc(var(--cell-size) * 0.8);
+}
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
-}
-
-:root {
-  --cell-size: 100px;
-  --mark-size: calc(var(--cell-size) * 0.8);
 }
 
 body {
@@ -41,29 +41,29 @@ body {
   cursor: pointer;
 }
 
+.cell:nth-child(3n + 1) {
+  border-left: none;
+}
+
 .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3) {
   border-top: none;
 }
 
-.cell:nth-child(3n + 1) {
-  border-left: none;
-}
-
 .cell:nth-child(3n + 3) {
   border-right: none;
+}
+
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
 }
 
 .cell:nth-child(7),
 .cell:nth-child(8),
 .cell:nth-child(9) {
   border-bottom: none;
-}
-
-.cell.x,
-.cell.circle {
-  cursor: not-allowed;
 }
 
 .cell.x::before,

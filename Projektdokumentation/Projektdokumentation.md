@@ -12,18 +12,18 @@
 
 ### 1.1 Ihr Projekt
 
-✍️ Beschreiben Sie Ihr Projekt in einem griffigen Satz.
+In diesem Projekt erstellen wir eine Website, auf der man Tic Tac Toe gegen einen Freund oder gegen einen Computergegner spielen kann.
 
-✍️ Erklären Sie genauer in 50 bis 100 Wörtern, was genau Sie in diesem Projekt erreichen möchten, und was Sie dabei zu lernen hoffen.
+In diesem Projekt wollen wir unsere allgemeine Kenntnisse im Bereich HTML und CSS verbessern und vertiefen. Unser Hauptziel ist es jedoch, mehr Erfahrung mit der Programmiersprache Java Script zu sammeln, da wir in dem Modul 294 mit Java Script arbeiten. Ausserdem wollen auch Fokus auf die Teamarbeit bei grösseren Distanzen legen, da wir dieses Projekt im Homeoffice umsetzen werden.
 
 ### 1.2 Anforderungen
 
 | US-№ | Verbindlichkeit | Typ        | Beschreibung                                                                                                                                   |
 | ---- | --------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1    | Muss            | Funktional | Als ein User möchte ich das Spielfeld sehen können, damit ich meine Spielzüge planen kann.                                                     |
-| 2    | Muss            | Funktional | Als ein User möchte ich X oder O in ein Feld machen können, um ein Spielzug zu spielen.                                                        |
+| 2    | Muss            | Funktional | Als ein User möchte ich X in ein Feld machen können, um ein Spielzug zu spielen.                                                               |
 | 3    | Muss            | Funktional | Als ein User möchte ich eine Anzeige sehen, damit ich weiss welcher Spieler an der Reihe ist.                                                  |
-| 4    | Muss            | Funktional | Als ein User möchte ich, dass ich gegen den Computer spielen kann, damit ich das Spiel spielen kann.                                           |
+| 4    | Muss            | Funktional | Als ein User möchte ich, dass ich gegen den Computer spielen kann, damit ich das Spiel auch alleine spielen kann.                              |
 | 5    | Kann            | Kann       | Als ein User möchte ich, dass ein Zweispielermodus spielen kann ohne Computer, damit ich mit Freunden spielen kann.                            |
 | 6    | Muss            | Qualität   | Als ein User möchte ich eine Punkteanzeige haben, damit ich weiss wer am Gewinnen ist.                                                         |
 | 7    | Muss            | Qualität   | Als ein User möchte ich die Möglichkeit haben eine Runde neu zu starten, damit ich nochmals spielen kann.                                      |
@@ -37,7 +37,7 @@
 | TC-№ | Ausgangslage                                       | Eingabe                                 | Erwartete Ausgabe                           |
 | ---- | -------------------------------------------------- | --------------------------------------- | ------------------------------------------- |
 | 1.1  | Webseite gestartet                                 | Spiel starten klicken                   | Spiel mit Spielfeld wird geöffnet           |
-| 2.1  | Spiel gestartet                                    | x oder o ausgewählt                     | x oder o wird in einem Feld platziert       |
+| 2.1  | Spiel gestartet                                    | Mausklick auf ein Feld                  | x wird in einem Feld platziert              |
 | 3.1  | Spiel gestartet                                    | -                                       | Spieler x oder o ist dran                   |
 | 4.1  | Webseite gestartet                                 | Gegen Computer spielen anklicken        | Spiel gegen Computer wird gestartet         |
 | 5.1  | Webseite gestartet                                 | Gegen anderen Spieler spielen anklicken | Spiel gegen anderen Spieler wird gestartet  |
@@ -70,9 +70,9 @@
 
 Total: 650 Min.
 
-✍️ Ein Arbeitspaket sollte etwa 45' für eine Person in Anspruch nehmen. Die totale Anzahl Arbeitspakete sollte etwa Folgendem entsprechen: `Anzahl R-Sitzungen` ╳ `Anzahl Gruppenmitglieder` ╳ `4`. Wenn Sie also zu dritt an einem Projekt arbeiten, für welches zwei R-Sitzungen geplant sind, sollten Sie auf `2` ╳ `3` ╳`4` = `24` Arbeitspakete kommen. Sollten Sie merken, dass Sie hier nicht genügend Arbeitspakte haben, denken Sie sich weitere "Kann"-User Stories für Kapitel 1.2 aus.
-
 ## 3 Entscheiden
+
+In diesem Projekt haben wir uns nicht dazu entschieden ein Teil weg zu lassen oder zu ergänzen, da wir es nicht für nötig halten an unserer Planung etwas an zu passen.
 
 ## 4 Realisieren
 
@@ -90,24 +90,23 @@ Total: 650 Min.
 | 10.A | 15.12.2023 | Sacher    | 30 Min        | 10 Min            |
 | 11.A | 08.12.2023 | Sacher    | 30 Min        | 20 Min            |
 
-✍️ Tragen Sie jedes Mal, wenn Sie ein Arbeitspaket abschließen, hier ein, wie lang Sie effektiv dafür hatten.
-
 ## 5 Kontrollieren
 
 | Test-№ | TC-№ | Resultat | Datum      | Tester |
 | ------ | ---- | -------- | ---------- | ------ |
-| 1      | 1.1  |          | 22.12.2023 | Sacher |
-| 2      | 2.1  |          | 22.12.2023 | Sacher |
-| 3      | 3.1  |          | 22.12.2023 | Sacher |
-| 4      | 4.1  |          | 22.12.2023 | Sacher |
-| 5      | 5.1  |          | 22.12.2023 | Sacher |
-| 6      | 6.1  |          | 22.12.2023 | Sacher |
-| 7      | 7.1  |          | 22.12.2023 | Sacher |
-| 8      | 8.1  |          | 22.12.2023 | Sacher |
-| 9      | 9.1  |          | 22.12.2023 | Sacher |
-| 10     | 10.1 |          | 22.12.2023 | Sacher |
-| 11     | 11.1 |          | 22.12.2023 | Sacher |
+| 1      | 1.1  | OK ✅    | 22.12.2023 | Sacher |
+| 2      | 2.1  | OK ✅    | 22.12.2023 | Sacher |
+| 3      | 3.1  | OK ✅    | 22.12.2023 | Sacher |
+| 4      | 4.1  | OK ❌    | 22.12.2023 | Sacher |
+| 5      | 5.1  | OK ✅    | 22.12.2023 | Sacher |
+| 6      | 6.1  | OK ❌    | 22.12.2023 | Sacher |
+| 7      | 7.1  | OK ✅    | 22.12.2023 | Sacher |
+| 8      | 8.1  | OK ✅    | 22.12.2023 | Sacher |
+| 9      | 9.1  | OK ✅    | 22.12.2023 | Sacher |
+| 10     | 10.1 | OK ✅    | 22.12.2023 | Sacher |
+| 11     | 11.1 | OK ✅    | 22.12.2023 | Sacher |
 
-✍️ Vergessen Sie nicht, ein Fazit hinzuzufügen, welches das Test-Ergebnis einordnet.
+Die Test sind fast alle erfolgreich. Der Spielmodus gegen den Computer ist noch nicht ganz vollständig, da der Computer momentan noch nicht gewinnen kann.
+Es gibt momentan auh noch keine Punkteanzeige in dem Spiel.
 
 ## 6 Auswerten

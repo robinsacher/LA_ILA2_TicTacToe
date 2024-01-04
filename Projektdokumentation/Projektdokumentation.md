@@ -101,10 +101,10 @@ In diesem Projekt haben wir uns nicht dazu entschieden ein Teil weg zu lassen od
 | 5      | 5.1  | OK ✅    | 22.12.2023 | Sacher |
 | 6      | 6.1  | OK ❌    | 22.12.2023 | Sacher |
 | 7      | 7.1  | OK ✅    | 22.12.2023 | Sacher |
-| 8      | 8.1  | OK ✅    | 22.12.2023 | Sacher |
-| 9      | 9.1  | OK ✅    | 22.12.2023 | Sacher |
-| 10     | 10.1 | OK ✅    | 22.12.2023 | Sacher |
-| 11     | 11.1 | OK ✅    | 22.12.2023 | Sacher |
+| 8      | 8.1  | OK ✅    | 22.12.2023 | Müller |
+| 9      | 9.1  | OK ✅    | 22.12.2023 | Müller |
+| 10     | 10.1 | OK ✅    | 22.12.2023 | Müller |
+| 11     | 11.1 | OK ✅    | 22.12.2023 | Müller |
 
 Die Test sind fast alle erfolgreich. Der Spielmodus gegen den Computer ist noch nicht ganz vollständig, da der Computer momentan noch nicht gewinnen kann.
 Es gibt momentan auh noch keine Punkteanzeige in dem Spiel.

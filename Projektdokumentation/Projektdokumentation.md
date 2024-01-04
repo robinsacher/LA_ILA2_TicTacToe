@@ -60,7 +60,7 @@ In diesem Projekt wollen wir unsere allgemeine Kenntnisse im Bereich HTML und CS
 | 2.A  | 22.12.2023 | Sacher    | Hier wird umgesetzt, dass man ein X oder O in das spielfeld platzieren kann. | 20 Min        |
 | 3.A  | 22.12.2023 | Sacher    | Hier wird die Anzeige umgesetzt, welcher spieler gerade an der Reihe ist.    | 20 Min        |
 | 4.A  | 22.12.2023 | Hitz      | Hier wird der Computergegner implementiert.                                  | 180 Min       |
-| 5.A  | 22.12.2023 | Hitz      | Hier wird der Zweiscpielermodus umgesetzt.                                   | 60 Min        |
+| 5.A  | 22.12.2023 | Hitz      | Hier wird der Zweispielermodus umgesetzt.                                   | 60 Min        |
 | 6.A  | 22.12.2023 | Hitz      | Hier wird eine Punkteanzeige hinzugefügt.                                    | 60 Min        |
 | 7.A  | 22.12.2023 | Müller    | Hier wird die Funktion um ein Spiel neu starten zu können implementiert.     | 40 Min        |
 | 8.A  | 22.12.2023 | Müller    | Hier wird die Benutzeroberfläche übersichtlich gestaltet                     | 120 Min       |

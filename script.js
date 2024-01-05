@@ -47,7 +47,7 @@ function endGameAndReturnToMenu() {
   winningMessageElement.classList.remove("show");
 }
 
-// Spielregeln für Einzelspieler und Mehrspieler //
+// Singleplayer
 const X_CLASS = "x";
 const CIRCLE_CLASS = "circle";
 const WINNING_COMBINATIONS = [
@@ -137,7 +137,6 @@ function checkWin(currentClass) {
   });
 }
 
-
 function endGame(draw) {
   if (draw) {
     winningMessageTextElement.innerText = "Unentschieden!";
@@ -161,28 +160,7 @@ function isDraw() {
   });
 }
 
-// Computerspieler
-function makeComputerMove() {
-  const emptyCells = [...cellElements].filter(
-    (cell) => !cell.classList.contains(X_CLASS)
-  );
-
-  // Minimax Alogrithmus
-  const bestMove = getBestMove(emptyCells, circleTurn ? CIRCLE_CLASS : X_CLASS);
-  const cell = emptyCells[bestMove.index];
-
-  setTimeout(() => {
-    placeMark(cell, circleTurn ? CIRCLE_CLASS : X_CLASS);
-
-    if (checkWin(circleTurn ? CIRCLE_CLASS : X_CLASS) || isDraw()) {
-      endGame(checkWin(circleTurn ? CIRCLE_CLASS : X_CLASS) ? false : true);
-    } else {
-      swapTurns();
-      setBoardHoverClass();
-    }
-  }, 10000);
-  
-}
+//Multiplayer
 
 function getBestMove(emptyCells, player) {
   // Minimax algorithm

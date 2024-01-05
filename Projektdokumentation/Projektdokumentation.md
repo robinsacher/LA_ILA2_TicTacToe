@@ -60,7 +60,7 @@ In diesem Projekt wollen wir unsere allgemeine Kenntnisse im Bereich HTML und CS
 | 2.A  | 22.12.2023 | Sacher    | Hier wird umgesetzt, dass man ein X oder O in das spielfeld platzieren kann. | 20 Min        |
 | 3.A  | 22.12.2023 | Sacher    | Hier wird die Anzeige umgesetzt, welcher spieler gerade an der Reihe ist.    | 20 Min        |
 | 4.A  | 22.12.2023 | Hitz      | Hier wird der Computergegner implementiert.                                  | 180 Min       |
-| 5.A  | 22.12.2023 | Hitz      | Hier wird der Zweispielermodus umgesetzt.                                   | 60 Min        |
+| 5.A  | 22.12.2023 | Hitz      | Hier wird der Zweispielermodus umgesetzt.                                    | 60 Min        |
 | 6.A  | 22.12.2023 | Hitz      | Hier wird eine Punkteanzeige hinzugefügt.                                    | 60 Min        |
 | 7.A  | 22.12.2023 | Müller    | Hier wird die Funktion um ein Spiel neu starten zu können implementiert.     | 40 Min        |
 | 8.A  | 22.12.2023 | Müller    | Hier wird die Benutzeroberfläche übersichtlich gestaltet                     | 120 Min       |
@@ -101,10 +101,10 @@ In diesem Projekt haben wir uns nicht dazu entschieden ein Teil weg zu lassen od
 | 5      | 5.1  | OK ✅    | 22.12.2023 | Sacher |
 | 6      | 6.1  | OK ❌    | 22.12.2023 | Sacher |
 | 7      | 7.1  | OK ✅    | 22.12.2023 | Sacher |
-| 8      | 8.1  | OK ✅    | 22.12.2023 | Müller |
-| 9      | 9.1  | OK ✅    | 22.12.2023 | Müller |
-| 10     | 10.1 | OK ✅    | 22.12.2023 | Müller |
-| 11     | 11.1 | OK ✅    | 22.12.2023 | Müller |
+| 8      | 8.1  | OK ✅    | 22.12.2023 | Sacher |
+| 9      | 9.1  | OK ✅    | 22.12.2023 | Sacher |
+| 10     | 10.1 | OK ✅    | 22.12.2023 | Sacher |
+| 11     | 11.1 | OK ✅    | 22.12.2023 | Sacher |
 
 Die Test sind fast alle erfolgreich. Der Spielmodus gegen den Computer ist noch nicht ganz vollständig, da der Computer momentan noch nicht gewinnen kann.
 Es gibt momentan auh noch keine Punkteanzeige in dem Spiel.

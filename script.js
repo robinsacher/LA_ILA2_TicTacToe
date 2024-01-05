@@ -45,6 +45,8 @@ function endGameAndReturnToMenu() {
   document.getElementById("board").style.display = "none";
   document.getElementById("gameModeText").style.display = "none";
   winningMessageElement.classList.remove("show");
+
+  zeigeAnleitung();
 }
 
 // Singleplayer

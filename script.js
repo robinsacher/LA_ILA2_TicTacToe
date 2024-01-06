@@ -1,4 +1,17 @@
 // DOM-Manipulation //
+function updateGameModeText() {
+  const gameModeTextElement = document.getElementById("gameModeText");
+  const anleitungButton = document.getElementById("anleitung");
+
+  if (againstComputer) {
+    gameModeTextElement.innerText = "Gegen Computer";
+  } else if (anleitungButton.style.display === "block") {
+    gameModeTextElement.innerText = "1 gegen 1: Anleitung";
+  } else {
+    gameModeTextElement.innerText = "1 gegen 1";
+  }
+}
+
 function startGameAgainstPlayer() {
   document.getElementById("anleitung").style.display = "none";
   document.getElementById("board").style.display = "grid";
@@ -23,31 +36,13 @@ function zeigeAnleitung() {
   document.getElementById("gameModeText").style.display = "none";
 }
 
-// Anpassung text für Buttons im Navigationsmenu
-function updateGameModeText() {
-  const gameModeTextElement = document.getElementById("gameModeText");
-  const anleitungButton = document.getElementById("anleitung");
-
-  if (againstComputer) {
-    gameModeTextElement.innerText = "Gegen Computer";
-  } else if (anleitungButton.style.display === "block") {
-    gameModeTextElement.innerText = "1 gegen 1: Anleitung";
-  } else {
-    gameModeTextElement.innerText = "1 gegen 1";
-  }
+function endGameAndReturnToMenu() {
+  zeigeAnleitung();
+  winningMessageElement.classList.remove("show");
 }
 
 const endButton = document.getElementById("endButton");
 endButton.addEventListener("click", endGameAndReturnToMenu);
-
-function endGameAndReturnToMenu() {
-  document.getElementById("menu").style.display = "flex";
-  document.getElementById("board").style.display = "none";
-  document.getElementById("gameModeText").style.display = "none";
-  winningMessageElement.classList.remove("show");
-
-  zeigeAnleitung();
-}
 
 // Singleplayer
 const X_CLASS = "x";

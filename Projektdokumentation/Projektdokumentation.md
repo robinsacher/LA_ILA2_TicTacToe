@@ -110,3 +110,10 @@ Die Test sind fast alle erfolgreich. Der Spielmodus gegen den Computer ist noch 
 Es gibt momentan auh noch keine Punkteanzeige in dem Spiel.
 
 ## 6 Auswerten
+Dieses Projekt ist gut verlaufen, vor allem weil wir das ganze Projekt im Homeoffice umgesetzt haben. Die Arbeitsteilung hat auch gut funktioniert und es hat keine Probleme gegeben, bezüglich des im selben Moment an dem Projekt zu arbeiten, da wir in Visual Studio Code die Live Share Funktion verwendet haben und alle aktuellen Veränderungen dank der Live Server Extension gesehen haben. In diesem Projekt konnten wir mehr Erfahrung mit JavaScript sammeln und bestimmte Bereiche wie DOM-Manipulation vertiefen.
+
+## 7 Porfolioeintrag
+- Robin Sacher: https://portfolio.bbbaden.ch/view/view.php?t=51973cdafa7090acfb09
+- Damian Müller: 
+- Jualian Hitz: 
+

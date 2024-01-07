@@ -168,7 +168,6 @@ function getBestMove(emptyCells, player) {
       draw: 0,
     };
 
-    // Überprüfen, ob das Spiel beendet ist und Rückgabe des Scores
     if (checkWin(X_CLASS)) return scores.X - depth;
     if (checkWin(CIRCLE_CLASS)) return scores.O + depth;
     if (isDraw()) return scores.draw;
@@ -189,13 +188,13 @@ function getBestMove(emptyCells, player) {
           }
 
           alpha = Math.max(alpha, eval);
-          if (beta <= alpha) return; // Alpha-Beta Pruning
+          if (beta <= alpha) return;
         }
       });
 
       return { index: bestMoveIndex, score: maxEval };
     } else {
-      // Minimizing player's logic remains the same
+
     }
   };
 
@@ -215,7 +214,7 @@ function makeComputerMove() {
 
   cellElements.forEach((cell, index) => {
     if (cellIsEmpty(cell)) {
-      cell.classList.add(CIRCLE_CLASS); // Computer ist O
+      cell.classList.add(CIRCLE_CLASS);
       const score = minimax(cellElements, 0, -Infinity, Infinity, false);
       cell.classList.remove(CIRCLE_CLASS);
 

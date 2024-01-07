@@ -1,33 +1,33 @@
 // DOM-Manipulation //
-function updateGameModeText() {
-  const gameModeTextElement = document.getElementById("gameModeText");
+function aktualisiereSpielmodusText() {
+  const spielmodusTextElement = document.getElementById("gameModeText");
   const anleitungButton = document.getElementById("anleitung");
 
-  if (againstComputer) {
-    gameModeTextElement.innerText = "Gegen Computer";
+  if (gegenComputer) {
+    spielmodusTextElement.innerText = "Gegen Computer";
   } else if (anleitungButton.style.display === "block") {
-    gameModeTextElement.innerText = "1 gegen 1: Anleitung";
+    spielmodusTextElement.innerText = "1 gegen 1: Anleitung";
   } else {
-    gameModeTextElement.innerText = "1 gegen 1";
+    spielmodusTextElement.innerText = "1 gegen 1";
   }
 }
 
-function startGameAgainstPlayer() {
+function starteSpielGegenSpieler() {
   document.getElementById("anleitung").style.display = "none";
   document.getElementById("board").style.display = "grid";
   document.getElementById("gameModeText").style.display = "block";
 
-  againstComputer = false;
-  startGame();
+  gegenComputer = false;
+  starteSpiel();
 }
 
-function startGameAgainstComputer() {
+function starteSpielGegenComputer() {
   document.getElementById("anleitung").style.display = "none";
   document.getElementById("board").style.display = "grid";
   document.getElementById("gameModeText").style.display = "block";
 
-  againstComputer = true;
-  startGame();
+  gegenComputer = true;
+  starteSpiel();
 }
 
 function zeigeAnleitung() {
@@ -36,18 +36,18 @@ function zeigeAnleitung() {
   document.getElementById("gameModeText").style.display = "none";
 }
 
-function endGameAndReturnToMenu() {
+function beendeSpielUndKehreZumMenüZurück() {
   zeigeAnleitung();
   winningMessageElement.classList.remove("show");
 }
 
 const endButton = document.getElementById("endButton");
-endButton.addEventListener("click", endGameAndReturnToMenu);
+endButton.addEventListener("click", beendeSpielUndKehreZumMenüZurück);
 
-// Singleplayer
-const X_CLASS = "x";
-const CIRCLE_CLASS = "circle";
-const WINNING_COMBINATIONS = [
+// Einzelspieler
+const X_KLASSE = "x";
+const CIRCLE_KLASSE = "circle";
+const GEWINNENDE_KOMBINATIONEN = [
   [0, 1, 2], //1. Reihe
   [3, 4, 5], //2. Reihe
   [6, 7, 8], //3. Reihe
@@ -57,85 +57,83 @@ const WINNING_COMBINATIONS = [
   [0, 4, 8], //1. Diagonale
   [2, 4, 6], //2. Diagonale
 ];
-const cellElements = document.querySelectorAll("[data-cell]");
-const board = document.getElementById("board");
+const zellenElemente = document.querySelectorAll("[data-cell]");
+const brett = document.getElementById("board");
 const winningMessageElement = document.getElementById("winningMessage");
 const restartButton = document.querySelector(".restartButton");
 
 const winningMessageTextElement = document.querySelector(".winning-message p");
 let circleTurn;
-let againstComputer;
+let gegenComputer;
 
-startGame();
+restartButton.addEventListener("click", starteSpiel);
 
-restartButton.addEventListener("click", startGame);
-
-function startGame() {
+function starteSpiel() {
   document.getElementById("menu").style.display = "flex";
   circleTurn = false;
-  updateGameModeText();
-  cellElements.forEach((cell) => {
-    cell.classList.remove(X_CLASS);
-    cell.classList.remove(CIRCLE_CLASS);
-    cell.removeEventListener("click", handleClick);
-    cell.addEventListener("click", handleClick, { once: true });
+  aktualisiereSpielmodusText();
+  zellenElemente.forEach((zelle) => {
+    zelle.classList.remove(X_KLASSE);
+    zelle.classList.remove(CIRCLE_KLASSE);
+    zelle.removeEventListener("click", handleClick);
+    zelle.addEventListener("click", handleClick, { once: true });
   });
-  setBoardHoverClass();
+  setzeBrettHoverKlasse();
   winningMessageElement.classList.remove("show");
 
-  if (againstComputer && circleTurn) {
-    makeComputerMove();
+  if (gegenComputer && circleTurn) {
+    macheComputerZug();
   }
 }
 
 function handleClick(e) {
-  console.log("clicked");
-  const cell = e.target;
-  const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
-  placeMark(cell, currentClass);
+  console.log("geklickt");
+  const zelle = e.target;
+  const aktuelleKlasse = circleTurn ? CIRCLE_KLASSE : X_KLASSE;
+  platziereMarkierung(zelle, aktuelleKlasse);
 
-  if (checkWin(currentClass)) {
-    endGame(false);
-  } else if (isDraw()) {
-    endGame(true);
+  if (prüfeGewinn(aktuelleKlasse)) {
+    beendeSpiel(false);
+  } else if (istUnentschieden()) {
+    beendeSpiel(true);
   } else {
-    if (againstComputer) {
-      makeComputerMove();
+    if (gegenComputer) {
+      macheComputerZug();
     } else {
-      swapTurns();
-      setBoardHoverClass();
+      wechsleRunden();
+      setzeBrettHoverKlasse();
     }
   }
 }
 
-function placeMark(cell, currentClass) {
-  cell.classList.add(currentClass);
+function platziereMarkierung(zelle, aktuelleKlasse) {
+  zelle.classList.add(aktuelleKlasse);
 }
 
-function swapTurns() {
+function wechsleRunden() {
   circleTurn = !circleTurn;
 }
 
-function setBoardHoverClass() {
-  board.classList.remove(X_CLASS);
-  board.classList.remove(CIRCLE_CLASS);
+function setzeBrettHoverKlasse() {
+  brett.classList.remove(X_KLASSE);
+  brett.classList.remove(CIRCLE_KLASSE);
   if (circleTurn) {
-    board.classList.add(CIRCLE_CLASS);
+    brett.classList.add(CIRCLE_KLASSE);
   } else {
-    board.classList.add(X_CLASS);
+    brett.classList.add(X_KLASSE);
   }
 }
 
-function checkWin(currentClass) {
-  return WINNING_COMBINATIONS.some((combination) => {
-    return combination.every((index) => {
-      return cellElements[index].classList.contains(currentClass);
+function prüfeGewinn(aktuelleKlasse) {
+  return GEWINNENDE_KOMBINATIONEN.some((kombination) => {
+    return kombination.every((index) => {
+      return zellenElemente[index].classList.contains(aktuelleKlasse);
     });
   });
 }
 
-function endGame(draw) {
-  if (draw) {
+function beendeSpiel(unentschieden) {
+  if (unentschieden) {
     winningMessageTextElement.innerText = "Unentschieden!";
   } else {
     var audio = new Audio("WinnerSound.mp3");
@@ -149,42 +147,43 @@ function endGame(draw) {
   endButton.style.display = "block";
 }
 
-function isDraw() {
-  return [...cellElements].every((cell) => {
+function istUnentschieden() {
+  return [...zellenElemente].every((zelle) => {
     return (
-      cell.classList.contains(X_CLASS) || cell.classList.contains(CIRCLE_CLASS)
+      zelle.classList.contains(X_KLASSE) ||
+      zelle.classList.contains(CIRCLE_KLASSE)
     );
   });
 }
 
-//Multiplayer
+// Multiplayer
 
-function getBestMove(emptyCells, player) {
-  // Minimax algorithm
-  const minimax = (board, depth, alpha, beta, maximizingPlayer) => {
-    const scores = {
+function erhalteBestenZug(leereZellen, spieler) {
+  // Minimax-Algorithmus
+  const minimax = (brett, tiefe, alpha, beta, maximizingPlayer) => {
+    const punkte = {
       X: -1,
       O: 1,
-      draw: 0,
+      unentschieden: 0,
     };
 
-    if (checkWin(X_CLASS)) return scores.X - depth;
-    if (checkWin(CIRCLE_CLASS)) return scores.O + depth;
-    if (isDraw()) return scores.draw;
+    if (prüfeGewinn(X_KLASSE)) return punkte.X - tiefe;
+    if (prüfeGewinn(CIRCLE_KLASSE)) return punkte.O + tiefe;
+    if (istUnentschieden()) return punkte.unentschieden;
 
     if (maximizingPlayer) {
       let maxEval = -Infinity;
-      let bestMoveIndex = null;
+      let besterZugIndex = null;
 
-      board.forEach((cell, index) => {
-        if (cellIsEmpty(cell)) {
-          cell.classList.add(CIRCLE_CLASS);
-          const eval = minimax(board, depth + 1, alpha, beta, false);
-          cell.classList.remove(CIRCLE_CLASS);
+      brett.forEach((zelle, index) => {
+        if (zelleIstLeer(zelle)) {
+          zelle.classList.add(CIRCLE_KLASSE);
+          const eval = minimax(brett, tiefe + 1, alpha, beta, false);
+          zelle.classList.remove(CIRCLE_KLASSE);
 
           if (eval > maxEval) {
             maxEval = eval;
-            bestMoveIndex = index;
+            besterZugIndex = index;
           }
 
           alpha = Math.max(alpha, eval);
@@ -192,46 +191,66 @@ function getBestMove(emptyCells, player) {
         }
       });
 
-      return { index: bestMoveIndex, score: maxEval };
+      return { index: besterZugIndex, punktzahl: maxEval };
     } else {
+      let minEval = Infinity;
+      let besterZugIndex = null;
 
+      brett.forEach((zelle, index) => {
+        if (zelleIstLeer(zelle)) {
+          zelle.classList.add(X_KLASSE);
+          const eval = minimax(brett, tiefe + 1, alpha, beta, true);
+          zelle.classList.remove(X_KLASSE);
+
+          if (eval < minEval) {
+            minEval = eval;
+            besterZugIndex = index;
+          }
+
+          beta = Math.min(beta, eval);
+          if (beta <= alpha) return;
+        }
+      });
+
+      return { index: besterZugIndex, punktzahl: minEval };
     }
   };
 
-  const result = minimax(emptyCells, 0, -Infinity, Infinity, true);
-  return result;
+  const ergebnis = minimax(leereZellen, 0, -Infinity, Infinity, true);
+  return ergebnis;
 }
 
-function cellIsEmpty(cell) {
+function zelleIstLeer(zelle) {
   return (
-    !cell.classList.contains(X_CLASS) && !cell.classList.contains(CIRCLE_CLASS)
+    !zelle.classList.contains(X_KLASSE) &&
+    !zelle.classList.contains(CIRCLE_KLASSE)
   );
 }
 
-function makeComputerMove() {
-  let bestScore = -Infinity;
-  let bestMove;
+function macheComputerZug() {
+  let bestePunktzahl = -Infinity;
+  let besterZug;
 
-  cellElements.forEach((cell, index) => {
-    if (cellIsEmpty(cell)) {
-      cell.classList.add(CIRCLE_CLASS);
-      const score = minimax(cellElements, 0, -Infinity, Infinity, false);
-      cell.classList.remove(CIRCLE_CLASS);
+  zellenElemente.forEach((zelle, index) => {
+    if (zelleIstLeer(zelle)) {
+      zelle.classList.add(CIRCLE_KLASSE);
+      const punktzahl = minimax(zellenElemente, 0, -Infinity, Infinity, false);
+      zelle.classList.remove(CIRCLE_KLASSE);
 
-      if (score > bestScore) {
-        bestScore = score;
-        bestMove = index;
+      if (punktzahl > bestePunktzahl) {
+        bestePunktzahl = punktzahl;
+        besterZug = index;
       }
     }
   });
 
-  if (bestMove != null) {
-    cellElements[bestMove].classList.add(CIRCLE_CLASS);
-    if (checkWin(CIRCLE_CLASS) || isDraw()) {
-      endGame(checkWin(CIRCLE_CLASS) ? false : true);
+  if (besterZug != null) {
+    zellenElemente[besterZug].classList.add(CIRCLE_KLASSE);
+    if (prüfeGewinn(CIRCLE_KLASSE) || istUnentschieden()) {
+      beendeSpiel(prüfeGewinn(CIRCLE_KLASSE) ? false : true);
     } else {
-      swapTurns();
-      setBoardHoverClass();
+      wechsleRunden();
+      setzeBrettHoverKlasse();
     }
   }
 }

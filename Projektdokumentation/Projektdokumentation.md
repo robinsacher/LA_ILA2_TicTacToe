@@ -115,5 +115,5 @@ Dieses Projekt ist gut verlaufen, vor allem weil wir das ganze Projekt im Homeof
 ## 7 Porfolioeintrag
 - Robin Sacher: https://portfolio.bbbaden.ch/view/view.php?t=51973cdafa7090acfb09
 - Damian Müller: 
-- Jualian Hitz: 
+- Julian Hitz: 
 

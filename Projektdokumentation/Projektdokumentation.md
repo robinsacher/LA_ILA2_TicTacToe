@@ -107,7 +107,7 @@ In diesem Projekt haben wir uns nicht dazu entschieden ein Teil weg zu lassen od
 | 11     | 11.1 | OK ✅    | 22.12.2023 | Sacher |
 
 Die Test sind fast alle erfolgreich. Der Spielmodus gegen den Computer ist noch nicht ganz vollständig, da der Computer momentan noch nicht gewinnen kann.
-Es gibt momentan auh noch keine Punkteanzeige in dem Spiel.
+Es gibt momentan auch noch keine Punkteanzeige in dem Spiel.
 
 ## 6 Auswerten
 Dieses Projekt ist gut verlaufen, vor allem weil wir das ganze Projekt im Homeoffice umgesetzt haben. Die Arbeitsteilung hat auch gut funktioniert und es hat keine Probleme gegeben, bezüglich des im selben Moment an dem Projekt zu arbeiten, da wir in Visual Studio Code die Live Share Funktion verwendet haben und alle aktuellen Veränderungen dank der Live Server Extension gesehen haben. In diesem Projekt konnten wir mehr Erfahrung mit JavaScript sammeln und bestimmte Bereiche wie DOM-Manipulation vertiefen.
